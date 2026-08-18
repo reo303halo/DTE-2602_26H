@@ -1,0 +1,369 @@
+# .gitignore
+
+# ============================================================
+
+# Python
+
+# ============================================================
+
+# Byte-compiled / optimized Python files
+
+**pycache**/
+*.py[cod]
+*$py.class
+
+# Python cache
+
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.pyre/
+.hypothesis/
+
+# Coverage
+
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+*.cover
+*.py,cover
+.pytest_cache/
+
+# Type checkers
+
+.dmypy.json
+dmypy.json
+mypy.ini
+
+# Packaging / build artifacts
+
+build/
+dist/
+*.egg-info/
+.eggs/
+pip-wheel-metadata/
+*.egg
+MANIFEST
+
+# ============================================================
+
+# Virtual Environments
+
+# ============================================================
+
+# Common Python environments
+
+.venv/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Conda environments
+
+.conda/
+conda-env/
+
+# Poetry
+
+.venv/
+.area51
+.narnia
+
+# Pipenv
+
+Pipfile.lock
+
+# ============================================================
+
+# Jupyter Notebook
+
+# ============================================================
+
+.ipynb_checkpoints/
+
+# Jupyter configuration
+
+.jupyter/
+
+# ============================================================
+
+# Machine Learning / AI
+
+# ============================================================
+
+# Model checkpoints and trained models
+
+checkpoints/
+models/
+model_checkpoints/
+*.ckpt
+*.pt
+*.pth
+*.safetensors
+*.onnx
+*.h5
+*.hdf5
+*.keras
+*.pkl
+*.pickle
+*.joblib
+
+# TensorFlow / Keras
+
+logs/
+tensorboard/
+*.tfevents.*
+
+# ML experiment tracking
+
+mlruns/
+wandb/
+.wandb/
+.neptune/
+
+# Hugging Face cache
+
+.huggingface/
+.cache/huggingface/
+
+# General model / dataset caches
+
+.cache/
+cache/
+
+# ============================================================
+
+# Datasets
+
+# ============================================================
+
+# Local datasets
+
+data/
+datasets/
+
+# Large data files
+
+*.csv
+*.tsv
+*.parquet
+*.feather
+*.h5
+*.hdf5
+*.npz
+*.npy
+
+# If you want to version small/important datasets, remove
+
+# the relevant patterns above or use Git LFS.
+
+# ============================================================
+
+# Environment Variables / Secrets
+
+# ============================================================
+
+.env
+.env.*
+!.env.example
+!.env.template
+
+# API keys / credentials
+
+*.pem
+*.key
+*.crt
+secrets/
+credentials/
+*.secret
+
+# ============================================================
+
+# IDEs / Editors
+
+# ============================================================
+
+# Visual Studio Code
+
+.vscode/
+*.code-workspace
+
+# JetBrains IDEs
+
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Sublime Text
+
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+
+*.swp
+*.swo
+*~
+
+# Emacs
+
+*~
+#*#
+
+# ============================================================
+
+# macOS
+
+# ============================================================
+
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Finder metadata
+
+Icon
+._*
+
+# macOS folder attributes
+
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+
+# Time Machine
+
+.Backup.*
+
+# ============================================================
+
+# Windows
+
+# ============================================================
+
+# Windows thumbnail cache
+
+Thumbs.db
+Thumbs.db:encryptable
+
+# Windows desktop.ini
+
+Desktop.ini
+
+# Windows Explorer files
+
+$RECYCLE.BIN/
+ehthumbs.db
+ehthumbs_vista.db
+
+# Windows Installer files
+
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+
+# ============================================================
+
+# Linux
+
+# ============================================================
+
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+
+# ============================================================
+
+# Logs / Temporary Files
+
+# ============================================================
+
+*.log
+logs/
+tmp/
+temp/
+*.tmp
+*.bak
+*.swp
+
+# ============================================================
+
+# Local Configuration
+
+# ============================================================
+
+*.local
+local/
+.local/
+
+# ============================================================
+
+# Databases
+
+# ============================================================
+
+*.sqlite
+*.sqlite3
+*.db
+
+# ============================================================
+
+# OS / Application Files
+
+# ============================================================
+
+# Microsoft Office temporary files
+
+~$*
+
+# General temporary files
+
+*.tmp
+*.temp
+
+# ============================================================
+
+# Project-specific generated files
+
+# ============================================================
+
+outputs/
+results/
+artifacts/
+experiments/
+runs/
+
+# Uncomment if these should not be version controlled:
+
+# notebooks/output/
+
+# reports/generated/
+
+# ============================================================
+
+# Optional: Ignore local Python configuration
+
+# ============================================================
+
+.python-version
+
+# ============================================================
+
+# Keep useful examples/templates
+
+# ============================================================
+
+# Make sure example environment files can be committed
+
+!.env.example
+!.env.template
