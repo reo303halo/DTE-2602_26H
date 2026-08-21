@@ -1,0 +1,84 @@
+\section{Citations and References}
+\label{sec:citations}
+Citations make clear which ideas, methods, results, and resources come
+from existing work and which are the author's own. They allow readers to
+verify claims, locate the work on which the report builds, and distinguish
+established knowledge from new contributions. This section explains when
+citations are required, how to manage references with \LaTeX{}, and how to
+cite software, datasets, and AI tools appropriately.
+
+\subsection{Why and when to cite}
+Cite a source whenever you rely on a fact, method, figure, or idea that
+is not your own or not common knowledge in the field. This includes:
+background facts (e.g.\ the original definition of an algorithm
+\cite{dijkstra1959}), tools and datasets you used, and prior work you
+compare against. A rule of thumb: if you could not have written the
+sentence without having read that source, cite it. Foundational results
+you build directly on should also be cited, even if they are famous ---
+for example, referencing Shannon's original formulation when discussing
+channel capacity \cite{shannon1948}.
+
+\begin{pitfallbox}
+  Citing a source is not the same as quoting it. Paraphrase in your own
+  words and cite; use direct quotation marks only for the rare case where
+  the exact wording matters (e.g.\ a definition from a standard).
+  Copy-pasting text and adding a citation at the end of the paragraph is
+  still plagiarism if the wording is not your own.
+\end{pitfallbox}
+
+\subsection{Using \texttt{natbib} and BibTeX}
+This template uses \texttt{natbib} with the \texttt{ieeetr} bibliography
+style, a numeric style common in CS/engineering venues. Entries live in
+\texttt{references.bib}; a minimal entry looks like:
+
+\begin{lstlisting}[language=TeX, caption={A BibTeX entry.}]
+@inproceedings{smith2023scheduling,
+  author    = {Smith, Jane and Doe, John},
+  title     = {Load-Aware Scheduling for Microservices},
+  booktitle = {Proc. of ExampleConf},
+  year      = {2023},
+  pages     = {1--12},
+}
+\end{lstlisting}
+
+and is cited in the text with \verb|\cite{smith2023scheduling}|, which
+renders as a bracketed number with the \texttt{ieeetr} style used here,
+e.g.\ the classic paper on machine intelligence \cite{turing1950}. (If
+you use an author--year style such as \texttt{plainnat} or
+\texttt{biblatex}'s \texttt{authoryear} instead, \texttt{natbib}'s
+\verb|\citet{...}| lets you use the author name as a noun in the
+sentence, e.g.\ ``Turing \verb|\citet{turing1950}| asked whether
+machines can think.'') Every entry you cite must appear in
+\texttt{references.bib},
+and (with numeric styles) every entry in the bibliography should be
+cited somewhere --- do not pad the reference list.
+
+\begin{tipbox}
+  If your own \LaTeX{} install has \texttt{biblatex}/\texttt{biber}
+  available (true on Overleaf and most modern TeX Live installs), you can
+  swap this template's \texttt{natbib} block in \texttt{main.tex} for
+  \verb|\usepackage[backend=biber,style=ieee]{biblatex}| plus
+  \verb|\addbibresource{references.bib}| and
+  \verb|\printbibliography|; \texttt{biblatex} offers more citation
+  styles and better internationalisation. Both approaches read the same
+  \texttt{references.bib} file.
+\end{tipbox}
+
+\subsection{Citing software, datasets, and AI tools}
+Cite the tools and datasets that materially shaped your results, e.g.\ a
+specific library version, dataset, or pretrained model, the same way you
+would cite a paper --- most have a recommended citation in their
+documentation or a Zenodo/DOI record. If you used a generative AI tool
+(e.g.\ for code suggestions or editing), follow your course's or
+institution's disclosure policy; when in doubt, state in a short
+paragraph (e.g.\ at the end of the introduction or in an
+acknowledgements section) what the tool was used for and confirm you
+verified the result yourself.
+
+\begin{tipbox}
+  Keep an eye on citation style consistency: IEEE numeric
+  (\texttt{[1]}), ACM, or author--year (APA/Chicago) --- pick the one your
+  course requires and use it throughout. Reference managers (Zotero,
+  JabRef) export directly to \texttt{.bib} and will save you many hours
+  over a semester.
+\end{tipbox}

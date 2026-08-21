@@ -350,6 +350,57 @@ runs/
 # reports/generated/
 
 # ============================================================
+# LaTeX
+# ============================================================
+
+# LaTeX auxiliary files
+*.aux
+*.lof
+*.lot
+*.toc
+*.out
+*.log
+*.fls
+*.fdb_latexmk
+*.synctex
+*.synctex.gz
+*.synctex(busy)
+
+# Bibliography files
+*.bbl
+*.bcf
+*.blg
+*.run.xml
+*.brf
+
+# Beamer presentation files
+*.nav
+*.snm
+*.vrb
+
+# LaTeX glossaries / indexes
+*.acn
+*.acr
+*.alg
+*.glg
+*.glo
+*.gls
+*.ist
+*.idx
+*.ilg
+*.ind
+
+# LaTeX build / generated output
+*.dvi
+*.xdv
+*.ps
+
+# LaTeX temporary files
+*.bak
+*.backup
+*~
+
+# ============================================================
 
 # Optional: Ignore local Python configuration
 

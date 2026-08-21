@@ -1,0 +1,73 @@
+\section{Writing Style}
+\label{sec:style}
+The primary goal of technical writing is to communicate ideas precisely
+and efficiently. In a CS or engineering report, clear language is more
+valuable than sophisticated-sounding language. The following guidelines
+cover the main aspects of technical style: clarity, tense, voice, precision,
+terminology, and paragraph structure.
+
+\subsection{Clarity over cleverness}
+Prefer the plain word to the fancy one, and the short sentence to the
+long one. ``We used'' beats ``We made utilization of''. ``The algorithm
+runs in $O(n\log n)$ time'' beats ``The algorithm exhibits logarithmic
+scaling behaviour with respect to input cardinality''. If a sentence
+takes two readings to parse, split it.
+
+\subsection{Tense}
+As a simple default:
+\begin{itemize}[nosep]
+      \item \textbf{Past tense} for what you did and what you observed:
+            ``We evaluated three schedulers'', ``The cache hit rate dropped
+            to 62\,\%''.
+      \item \textbf{Present tense} for facts that remain true and for
+            describing the content of your document itself: ``\Cref{fig:latency}
+            shows the results'', ``TCP guarantees in-order delivery''.
+\end{itemize}
+
+\subsection{Passive vs.\ active voice, and first person}
+Both active and passive voice are acceptable in engineering writing;
+the goal is clarity, not a blanket rule. Active voice is usually more
+direct: ``We measured latency under three loads'' is easier to parse than
+``Latency was measured under three loads by us''. Passive voice is useful
+when the actor is irrelevant or obvious: ``The packets were captured
+using \texttt{tcpdump}'' is fine because \emph{who} ran the tool matters
+less than \emph{how} the data was captured. Using ``we'' for actions your
+team actually performed is standard in modern CS writing --- check your
+course or venue's convention if unsure.
+
+\begin{pitfallbox}
+      Do not mix an impersonal, passive style in the results with a chatty
+      ``I think'' style in the discussion. Pick a register and keep it
+      consistent across the whole report.
+\end{pitfallbox}
+
+\subsection{Precision and hedging}
+Say exactly what you mean and no more. ``The system is fast'' is not a
+claim you can defend; ``the system processes 12{,}400 requests/s at the
+95th-percentile latency of 8\,ms on the hardware described in the
+experimental setup section'' is. Conversely, do not overclaim: if you tested on
+one dataset, say so, and do not generalise to ``all workloads''. Words
+like ``clearly'', ``obviously'', and ``trivially'' rarely help the
+reader and often hide a step you skipped.
+
+\subsection{Consistency}
+Pick one term for each concept and stick to it. If your system is a
+``scheduler'' in \cref{sec:structure}, do not call it a ``dispatcher'' in
+the evaluation unless you have explicitly defined them as synonyms.
+The same applies to notation: if $n$ is the number of nodes in
+\cref{sec:algorithms}, it must still be the number of nodes on the last
+page.
+
+\subsection{Paragraph and section structure}
+One idea per paragraph, and put the main point in the first sentence
+(a ``topic sentence''). Readers --- and graders --- skim; a report whose
+first sentence of every paragraph forms a coherent summary is a
+well-structured report. Use subsections to help navigation, but avoid
+sections with a single sentence and no subsections around them; if a
+subsection is that short, it is probably a paragraph, not a subsection.
+
+\begin{tipbox}
+      Read your own paragraph's first sentence out loud, in order, skipping
+      everything else. If that summary doesn't make sense as an outline of
+      your argument, restructure the paragraphs.
+\end{tipbox}

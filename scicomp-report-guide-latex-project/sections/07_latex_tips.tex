@@ -1,0 +1,50 @@
+\section{Practical \LaTeX{} Tips}
+\label{sec:latex-tips}
+
+This section is about the tool, not the writing --- small habits that
+save time and prevent embarrassing errors.
+
+\begin{itemize}
+      \item \textbf{One file per section.} As in this project
+            (\texttt{sections/*.tex}, pulled in with \verb|\input{}|), split
+            long documents so you can navigate, diff, and collaborate more
+            easily via version control.
+      \item \textbf{Use \texttt{cleveref}.} Write \verb|\cref{fig:latency}|
+            instead of \verb|Figure~\ref{fig:latency}|; it automatically
+            inserts ``Figure'', ``Table'', ``Section'', etc., consistently,
+            and you only need to remember one command.
+      \item \textbf{Never hand-number figures/sections/equations.} Always use
+            \verb|\label{}| and \verb|\ref{}|/\verb|\cref{}|. Manually typed
+            numbers (``see Figure 3'') silently go stale the moment you add a
+            figure earlier in the document.
+      \item \textbf{Non-breaking spaces before references.} Write
+            \verb|Section~\ref{sec:x}| (with \verb|~|) --- \texttt{cleveref}
+            handles this automatically, which is one more reason to use it.
+      \item \textbf{Use version control.} Put the project in Git. \LaTeX{}
+            source is plain text and diffs beautifully; commit before major
+            rewrites so you can always go back.
+      \item \textbf{Compile often.} Do not write for an hour without
+            compiling --- errors are much easier to find one paragraph at a
+            time than after 300 new lines.
+      \item \textbf{\texttt{siunitx} for units and numbers.} For a
+            report with many measurements, the \texttt{siunitx} package
+            (e.g.\ \verb|\SI{8.2}{ms}|) keeps units and number formatting
+            consistent; not used in this template to keep dependencies
+            minimal, but worth adding for data-heavy reports.
+      \item \textbf{Spell- and grammar-check.} Use your editor's checker or
+            an external tool before submission; typos undermine an otherwise
+            good report.
+      \item \textbf{Keep the preamble organised.} As the document grows, move
+      packages and custom commands into a separate \texttt{preamble.tex}
+      file and load it from \texttt{main.tex} with \verb|\input|. This keeps
+      the main document focused on its content and makes the configuration
+      easier to maintain.
+\end{itemize}
+
+\begin{tipbox}
+      Compile with \texttt{latexmk -pdf main.tex} (or the provided
+      \texttt{Makefile}: run \texttt{make}) rather than calling
+      \texttt{pdflatex} manually several times --- \texttt{latexmk} re-runs
+      \texttt{bibtex}/\texttt{pdflatex} exactly as many times as needed to
+      resolve citations and cross-references.
+\end{tipbox}

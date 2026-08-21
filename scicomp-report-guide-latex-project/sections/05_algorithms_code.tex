@@ -1,0 +1,92 @@
+\section{Algorithms and Code}
+\label{sec:algorithms}
+Algorithms and implementation details should be presented at the level
+needed for the reader to understand, reproduce, or evaluate the work.
+Use pseudocode when the logic of an algorithm is the important part, source
+code listings when a specific implementation detail matters, and equations
+when the underlying computation or relationship needs to be stated
+precisely. Avoid reproducing implementation details that do not contribute
+to the argument; the complete source code can instead be provided in an
+appendix or repository.
+
+\subsection{Pseudocode}
+When the \emph{logic} of a method matters more than a specific programming
+language, present it as pseudocode with the \texttt{algorithm2e} package,
+as in \Cref{alg:kmeans}. Pseudocode should be language-agnostic, use
+meaningful variable names, and be short enough to read in under a minute.
+If it needs more than about 20 lines, summarise the outer loop in prose and
+put the full version in an appendix.
+
+\begin{algorithm}[htbp]
+  \DontPrintSemicolon
+  \KwIn{Dataset $X = \{x_1,\ldots,x_n\}$, number of clusters $k$}
+  \KwOut{Cluster assignments $c_1,\ldots,c_n$ and centroids $\mu_1,\ldots,\mu_k$}
+
+  Initialise $k$ centroids $\mu_1,\ldots,\mu_k$ randomly\;
+  
+  \Repeat{convergence}{
+    \ForEach{$x_i \in X$}{
+      $c_i \gets \arg\min_{j \in \{1,\ldots,k\}}
+      \lVert x_i - \mu_j \rVert^2$\;
+    }
+
+    \ForEach{$j \in \{1,\ldots,k\}$}{
+      $\mu_j \gets \frac{1}{|\{i : c_i=j\}|}
+      \sum_{i:c_i=j} x_i$\;
+    }
+  }
+
+  \Return{$c_1,\ldots,c_n,\mu_1,\ldots,\mu_k$}\;
+
+  \caption{K-means clustering}
+  \label{alg:kmeans}
+\end{algorithm}
+
+\subsection{Source code listings}
+When the exact code matters (e.g.\ when explaining a preprocessing step or
+a model implementation detail), use the \texttt{listings} package rather
+than a screenshot, so the code is searchable, copy-pasteable, and
+consistently styled. \Cref{lst:kmeans} shows a short Python implementation
+using scikit-learn.
+
+\begin{lstlisting}[language=Python,
+  caption={Clustering data points with K-means.},
+  label={lst:kmeans}]
+from sklearn.cluster import KMeans
+
+model = KMeans(n_clusters=3, random_state=42)
+labels = model.fit_predict(X)
+\end{lstlisting}
+
+\begin{tipbox}
+  Only include code that illustrates a specific point you are making in
+  the text. A report is not the place to reproduce your entire codebase
+  --- link to a repository or put long listings in an appendix.
+\end{tipbox}
+
+\begin{pitfallbox}
+  Do not paste an indented code block as plain text without syntax
+  highlighting or numbering; it becomes very hard to reference (``see line
+  14'') and hard to read. Use \texttt{listings} or \texttt{minted}
+  consistently throughout the report.
+\end{pitfallbox}
+
+\subsection{Equations}
+Number equations you refer to later, and treat the equation as part of
+the sentence grammatically. For example, the K-means objective can be
+defined as
+
+\begin{equation}
+  \label{eq:kmeans}
+  J =
+  \sum_{i=1}^{n}
+  \left\lVert x_i - \mu_{c_i} \right\rVert^2,
+\end{equation}
+
+where $x_i$ is the $i$th data point, $c_i$ is its assigned cluster, and
+$\mu_{c_i}$ is the centroid of that cluster. \Cref{eq:kmeans} expresses
+the objective that K-means minimises: the total squared distance between
+each data point and the centroid of its assigned cluster. The equation
+therefore gives the reader a precise mathematical description of the
+algorithm presented in \Cref{alg:kmeans}.
+

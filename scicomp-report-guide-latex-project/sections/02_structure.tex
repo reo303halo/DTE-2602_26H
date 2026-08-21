@@ -1,0 +1,85 @@
+\section{Structure of a Report}
+\label{sec:structure}
+
+Most scientific writing in engineering follows a variant of the
+\textbf{IMRaD} pattern: \emph{Introduction, Methods, Results, and
+Discussion}. \Cref{tab:structure} shows how this maps onto a typical
+CS/engineering report and what each part is \emph{for} --- not just what
+it is called.
+
+\renewcommand{\arraystretch}{1.4}
+
+\begin{table}[htbp]
+  \centering
+  \caption{Typical section structure for a CS/engineering report and the
+  question each section must answer.}
+  \label{tab:structure}
+
+  \begin{tabular}{@{}p{4cm}p{10.5cm}@{}}
+    \toprule
+    \textbf{Section} & \textbf{Question it must answer} \\
+    \midrule
+
+    Title & What is this, in one line? \\
+    \hline
+    Abstract & In 150--250 words: problem, approach, key result. \\
+    \hline
+    Introduction & Why does this problem matter, and what exactly did you do about it? \\
+    \hline
+    Background / Related Work & What does the reader need to know, and how does your work relate to existing solutions? \\
+    \hline
+    Design / Methodology & How does your system or experiment work, and why did you make these design choices? \\
+    \hline
+    Implementation & What did you actually build? (Only if relevant --- keep it high-level; code goes in an appendix or repository.) \\
+    \hline
+    Evaluation / Results & What did you measure, and what did you observe? (Facts only, no interpretation yet.) \\
+    \hline
+    Discussion & What do the results \emph{mean}? What are the limitations? \\
+    \hline
+    Conclusion & What is the one-paragraph takeaway, and what would you do next? \\
+    \hline
+    References & Who else's work did you build on or compare against? \\
+
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\subsection{Abstract}
+The abstract is the most-read and least-understood part of a report. It
+is \emph{not} an introduction and it is \emph{not} a table of contents in
+prose form. A good abstract compresses the whole report into four moves:
+(1) one sentence of context/problem, (2) one sentence of what you did,
+(3) one or two sentences of what you found, (4) optionally, one sentence
+on why it matters. Write the abstract \emph{last}, after the rest of the
+report is stable.
+
+\subsection{Introduction vs.\ Background}
+Students often merge these, which weakens both. The \textbf{introduction}
+motivates the problem and states your contribution in the first page ---
+a reader who stops after the introduction should still know what you did
+and why. The \textbf{background/related work} section is where you teach
+the reader the prerequisites and position your work relative to existing
+approaches. If a fact is needed to understand your method, it belongs in
+background, not scattered later.
+
+\begin{tipbox}
+  A useful test: could you swap the introduction of two unrelated reports
+  and have both still make sense? If yes, your introduction is too generic
+  --- it needs to say what \emph{your} project specifically does.
+\end{tipbox}
+
+\subsection{Results vs.\ Discussion}
+Keep these separate, even if only conceptually. \textbf{Results} report
+what happened, ideally with a table or figure and minimal commentary.
+\textbf{Discussion} is where you interpret: Was this expected? Does it
+support your hypothesis? What are the threats to validity (measurement
+noise, small sample, unrepresentative test data, hardware differences)?
+Mixing the two makes it hard for a reader --- or a grader --- to tell
+which sentences are evidence and which are your opinion.
+
+\begin{exercisebox}
+  Take the last report you wrote (for this course or another) and
+  highlight every sentence in your results section that contains a
+  judgement word (``surprisingly'', ``unfortunately'', ``clearly better'').
+  Each one is arguably discussion, not results. How many did you find?
+\end{exercisebox}

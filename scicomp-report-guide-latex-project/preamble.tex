@@ -1,0 +1,208 @@
+% =====================================================================
+% UiT-inspired preamble
+% Writing Scientific Reports in Computer Science & Engineering
+% =====================================================================
+
+% ---------------------------------------------------------------------
+% Language / fonts / encoding
+% ---------------------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+
+% expansion disabled because lmodern is not installed
+\usepackage{xcolor}
+\usepackage[expansion=false]{microtype}
+
+% ---------------------------------------------------------------------
+% Page geometry and spacing
+% ---------------------------------------------------------------------
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{setspace}
+\onehalfspacing
+
+% ---------------------------------------------------------------------
+% UiT colour palette
+% ---------------------------------------------------------------------
+
+% Main colour - Mørk blå
+\definecolor{uitDarkBlue}{RGB}{0,51,73}
+
+% Blue
+\definecolor{uitBlue}{RGB}{0,115,150}
+
+% Light blue
+\definecolor{uitLightBlue}{RGB}{89,190,201}
+
+% Red
+\definecolor{uitRed}{RGB}{203,51,59}
+
+% Yellow
+\definecolor{uitYellow}{RGB}{242,169,0}
+
+% ---------------------------------------------------------------------
+% Math, figures, tables
+% ---------------------------------------------------------------------
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{subcaption}
+
+% ---------------------------------------------------------------------
+% TikZ / PGFPlots
+% ---------------------------------------------------------------------
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{eso-pic}
+
+% ---------------------------------------------------------------------
+% Algorithms and code listings
+% ---------------------------------------------------------------------
+\usepackage[ruled,vlined,linesnumbered]{algorithm2e}
+\usepackage{listings}
+
+% Code colours based on UiT palette
+\definecolor{codebg}{RGB}{245,247,248}
+\definecolor{codekw}{RGB}{0,51,73}
+\definecolor{codecomment}{RGB}{60,110,110}
+\definecolor{codestring}{RGB}{203,51,59}
+
+\lstdefinestyle{cs}{
+  backgroundcolor=\color{codebg},
+  basicstyle=\ttfamily\small,
+  keywordstyle=\color{codekw}\bfseries,
+  commentstyle=\color{codecomment}\itshape,
+  stringstyle=\color{codestring},
+  numbers=left,
+  numberstyle=\tiny\color{uitDarkBlue},
+  numbersep=8pt,
+  frame=single,
+  rulecolor=\color{uitLightBlue},
+  breaklines=true,
+  showstringspaces=false,
+  tabsize=2,
+  captionpos=b
+}
+
+\lstset{style=cs}
+
+% ---------------------------------------------------------------------
+% References
+% ---------------------------------------------------------------------
+% natbib + BibTeX is used for broad compatibility with TeX Live,
+% MiKTeX, and Overleaf. No biber binary is required.
+\usepackage[numbers,sort&compress]{natbib}
+
+% ---------------------------------------------------------------------
+% Lists
+% ---------------------------------------------------------------------
+\usepackage{enumitem}
+
+% ---------------------------------------------------------------------
+% Hyperlinks
+% ---------------------------------------------------------------------
+\usepackage{hyperref}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=uitDarkBlue,
+  citecolor=uitBlue,
+  urlcolor=uitBlue,
+  pdftitle={Writing Scientific Reports in Computer Science and Engineering},
+  pdfauthor={Your Name}
+}
+
+% ---------------------------------------------------------------------
+% Cross-referencing
+% ---------------------------------------------------------------------
+\usepackage[capitalise,noabbrev]{cleveref}
+
+% ---------------------------------------------------------------------
+% Headers and footers
+% ---------------------------------------------------------------------
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\setlength{\headheight}{30pt}
+
+\fancyhf{}
+
+% Left side of header
+\fancyhead[L]{%
+  \textcolor{uitDarkBlue}{%
+    \textbf{Writing Scientific Reports in CS/Engineering}%
+  }%
+}
+
+% Right side of header: UiT logo
+\fancyhead[R]{%
+  \includegraphics[height=22pt]{images/UiT_logos/UiT_Logo_Eng_2l_Bla_RGB.png}%
+}
+
+% Page number in footer
+\fancyfoot[C]{%
+  \textcolor{uitDarkBlue}{\thepage}%
+}
+
+% UiT light-blue line below header
+\renewcommand{\headrulewidth}{0.4pt}
+
+\renewcommand{\headrule}{%
+  {\color{uitLightBlue}%
+   \hrule width\headwidth height\headrulewidth}%
+}
+
+% ---------------------------------------------------------------------
+% UiT logo - title page background overlay
+% ---------------------------------------------------------------------
+
+\newcommand{\uitTitleLogo}{%
+  \tikz[remember picture,overlay]{
+    \node[
+      anchor=north east,
+      inner sep=0pt,
+      xshift=-1.5cm,
+      yshift=-1.2cm
+    ] at (current page.north east) {%
+      \includegraphics[height=100pt]{images/UiT_logos/UiT_Segl_Eng_Bla_960px.png}%
+    };
+  }%
+}
+
+% ---------------------------------------------------------------------
+% Teaching boxes
+% ---------------------------------------------------------------------
+\usepackage{tcolorbox}
+\tcbuselibrary{skins,breakable}
+
+% Tip
+\newtcolorbox{tipbox}[1][]{
+  colback=uitLightBlue!10,
+  colframe=uitBlue,
+  fonttitle=\bfseries\color{uitDarkBlue},
+  title=Tip,
+  breakable,
+  #1
+}
+
+% Common pitfall
+\newtcolorbox{pitfallbox}[1][]{
+  colback=uitRed!7,
+  colframe=uitRed,
+  fonttitle=\bfseries\color{uitRed!7},
+  title=Common pitfall,
+  breakable,
+  #1
+}
+
+% Exercise
+\newtcolorbox{exercisebox}[1][]{
+  colback=uitYellow!12,
+  colframe=uitYellow!80!black,
+  fonttitle=\bfseries\color{uitDarkBlue},
+  title=Exercise,
+  breakable,
+  #1
+}

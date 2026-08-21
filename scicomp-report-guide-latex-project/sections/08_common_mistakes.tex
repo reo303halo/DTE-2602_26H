@@ -1,0 +1,51 @@
+\section{Common Mistakes We See Every Year}
+\label{sec:mistakes}
+
+The following are common issues that weaken otherwise solid reports;
+check for them before finalising your document.
+
+\begin{enumerate}[nosep]
+      \item \textbf{Abstract that only restates the title.} ``This report
+            describes our load balancer'' tells the reader nothing an
+            abstract should: what was the problem, what did you build, what
+            did you find?
+      \item \textbf{No explicit research question or goal.} If a reader
+            cannot point to one sentence in your introduction that says what
+            you set out to answer or build, the rest of the report has
+            nothing to be evaluated against.
+      \item \textbf{Results without a baseline or comparison.} ``Our system
+            achieves 95\,\% accuracy'' means little without stating what a
+            naive baseline achieves, or what prior work reports.
+      \item \textbf{Screenshots instead of native figures/tables.} Hard to
+            read, inconsistent fonts, and impossible to cross-reference
+            cleanly (see \cref{sec:figures}).
+      \item \textbf{Unlabelled axes or missing units.} A plot with axes
+            called ``x'' and ``y'' communicates nothing.
+      \item \textbf{Wall-of-code appendices with no explanation.} Code should
+            support the argument, not replace it; explain the interesting 10
+            lines rather than pasting 500.
+      \item \textbf{Inconsistent notation or terminology}, e.g.\ switching
+            between $n$ and $N$ for the same quantity, or between ``node''
+            and ``server'' for the same concept.
+      \item \textbf{Claims with no evidence}, e.g.\ ``this is clearly the
+            best approach'' without a measurement, citation, or argument to
+            support it.
+      \item \textbf{Missing or informal citations}, e.g.\ ``according to a
+            blog post I found'' instead of a proper reference, or reusing
+            text from a source without paraphrasing and citing it
+            (\cref{sec:citations}).
+      \item \textbf{Conclusion that introduces new material.} The conclusion
+            should summarise and reflect on what came before, not present
+            new results or arguments for the first time.
+      \item \textbf{Ignoring \LaTeX{} warnings.} ``Overfull \textbackslash
+            hbox'', undefined references, and missing citations shown as
+            ``\texttt{[?]}'' in the compiled PDF are not cosmetic --- fix them
+            before submitting.
+\end{enumerate}
+
+\begin{pitfallbox}
+      The single most common issue is not grammar --- it is \emph{structure}:
+      results and discussion mixed together, no clear research question, or a
+      conclusion that repeats the abstract word for word. Fix structure first;
+      polish sentences last.
+\end{pitfallbox}

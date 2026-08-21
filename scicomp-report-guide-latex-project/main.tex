@@ -1,0 +1,76 @@
+\documentclass[11pt,a4paper]{article}
+
+\input{preamble.tex}
+
+\title{%
+  \AddToHook{shipout/background}{%
+  \ifnum\value{page}=1
+    \uitTitleLogo
+  \fi
+}
+  \Large
+  \textcolor{uitDarkBlue}{%
+    \textbf{Writing Scientific Reports in\\
+    Computer Science and Engineering}%
+  }
+  \\[0.3em]
+  \large
+  A Practical Guide and \LaTeX{} Template for Bachelor Students
+}
+
+\author{
+  Course: \emph{DTE-2602 Introduction to Machine Learning and Artifical Intelligence}\\
+  Instructor: \emph{Roy Espen Olsen}
+}
+
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+This document has two purposes at once. First, it is a short course on how to
+plan, structure, and write a scientific report in computer science(CS) and
+engineering, aimed at bachelor students writing their first lab reports,
+project reports, or thesis chapters. Second, the document \emph{is itself}
+written in \LaTeX{} and is meant to be copied and reused as a starting
+template: every section demonstrates the very techniques it describes ---
+figures, tables, algorithms, code listings, equations, and citations are
+all shown ``in the wild'' so that students can see the source and the
+rendered result side by side. Read \cref{sec:structure} for the expected
+structure of a report, and use \cref{sec:checklist} as a final
+self-review checklist before submission.
+\end{abstract}
+
+\newpage
+\tableofcontents
+\thispagestyle{fancy}
+\newpage
+
+% Its not always necessary to add a \newline after each section, 
+% but it is often done. It makes it easier to see where each new section starts.
+\input{sections/01_introduction}
+\newpage
+\input{sections/02_structure}
+\newpage
+\input{sections/03_writing_style}
+\newpage
+\input{sections/04_figures_tables}
+\newpage
+\input{sections/05_algorithms_code}
+\newpage
+\input{sections/06_citations}
+\newpage
+\input{sections/07_latex_tips}
+\newpage
+\input{sections/08_common_mistakes}
+\newpage
+\input{sections/09_checklist}
+\newpage
+
+\addcontentsline{toc}{section}{References}
+\bibliographystyle{ieeetr}
+\bibliography{references}
+
+\end{document}
