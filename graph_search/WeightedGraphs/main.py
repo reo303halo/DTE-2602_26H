@@ -7,6 +7,7 @@ from dijkstra import dijkstra
 from a_star import a_star
 
 
+
 # Use this value in a grid to mark a cell as a wall (not traversable).
 # Any other value is treated as the cost of moving INTO that cell.
 WALL = -1
