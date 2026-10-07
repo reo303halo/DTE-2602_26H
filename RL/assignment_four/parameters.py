@@ -12,8 +12,8 @@ WATCH = f"1,2,goal,{EPISODES}"
 
 # Q-learning parameters
 ALPHA = 0.1       # learning rate
-GAMMA = 0.9       # importance of future rewards
-EPSILON = 0.3     # probability of exploring
+GAMMA = 0.2       # importance of future rewards
+EPSILON = 0.5     # probability of exploring
 
 # Maximum number of steps in one episode
 MAXSTEPS = 100
