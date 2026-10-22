@@ -147,7 +147,6 @@ datasets/
 
 # Large data files
 
-*.csv
 *.tsv
 *.parquet
 *.feather
